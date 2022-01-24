@@ -61,6 +61,7 @@ header .header-sec {
     color: var(--primary-color);
 }
 .hamburger {
+    display: none;
     position: relative;
     width: 30px;
     height: 5px;
@@ -87,10 +88,13 @@ header .header-sec {
 }
 .cross {
     position: relative;
+    top: 10px;
+    left: 130px;
     width: 30px;
     height: 5px;
     background-color: #000;
     transform: rotate(45deg);
+    display: none;
 }
 .cross::after {
     content: "";
@@ -105,6 +109,8 @@ header .header-sec {
 nav ul {
     list-style: none;
     display: flex;
+    position: relative;
+    left: -50px;
 }
 nav ul li {
     margin-left: 15px;
@@ -389,15 +395,25 @@ nav ul li a:hover {
 /* responsive */
 @media only screen and (max-width: 540px) {
     nav {
+        border: 1px solid transparent;
+        padding: 15px;
+        padding-left: 60px;
+    }
+    .ribbon {
+        align-items: flex-start;
+    }
+    .hamburger {
         display: block;
     }
     nav ul {
+        display: none;
         flex-direction: column;/**/
-        gap: 10px;/**/
+        height: 210px;
     }
     nav ul li {
         width: 150px;/**/
         text-align: center;/**/
+        margin-bottom: 10px;
     }
     nav ul li a {
         width: 100%;/**/
